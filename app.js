@@ -4,6 +4,8 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
+const PORT = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
   res.status(200).send("Listening to childern");
 });
@@ -21,6 +23,6 @@ app.get("/news", async (req, res) => {
   }
 });
 
-app.listen(80, () => {
-  console.log("Listening to childern");
+app.listen(PORT, () => {
+  console.log(`Listening to childern ${PORT}`);
 });
